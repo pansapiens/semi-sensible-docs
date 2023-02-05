@@ -1,0 +1,12 @@
+# Semi-Sensible Synth Docs
+
+This is the documentation for Semi-sensible Synth Eurorack modules.
+
+## User documentation
+
+This is the documentation on how to use a built module.
+
+### Hexaloffle
+
+- [Hexaloffle](hexaloffle.md)
+

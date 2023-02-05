@@ -1,0 +1,13 @@
+site_name: Semi-Sensible Synth Documentation
+site_author: Andrew Perry
+theme:
+  name: readthedocs
+plugins:
+  - search
+extra_css:
+  - css/extra.css
+nav:
+  - 'Manuals and user guides':
+    - 'hexaloffle-manual.md'
+  - 'Build and development docs':
+    - 'hexaloffle-build.md'
