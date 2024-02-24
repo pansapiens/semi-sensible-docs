@@ -1,11 +1,15 @@
-# Hexloffle 
+# Hexaloffle 
 
-_Hexloffle: 6x tap tempo LFOs in 5HP_
+_Hexaloffle: 6x tap tempo LFOs in 5HP_
+
+[TOC]
 
 ## Overview
 
-_Hexloffle_ provides six tap tempo LFOs, with configurable multipliers/dividers per channel and
+_Hexaloffle_ provides six tap tempo LFOs, with configurable multipliers/dividers per channel and
 multiplier randomization via CV control.
+
+![Hexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs](images/hexaloffle/hexaloffle_panel_annotated.png  "Hexaloffle Front panel overview")
 
 &nbsp;                   |&nbsp;                                    
 -------------------------|-------------------------------------
@@ -15,13 +19,11 @@ multiplier randomization via CV control.
 **Typical current draw** | 100mA (+12V), 5mA (-12V), 0mA (+5V) 
 **Alignment**            | [Chaotic neutral](https://en.wikipedia.org/wiki/Alignment_(Dungeons_%26_Dragons)#Chaotic_neutral)
 
-![Hexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs](images/hexaloffle/hexaloffle_panel_annotated.jpg  "Hexaloffle Front panel overview")
-
 ## Installation
 
-Hexloffle requires a -12V/+12V power supply (standard 2x5 pin Eurorack power connector), and draws ~100mA on the +12V rail under normal operation.
+Hexaloffle requires a -12V/+12V power supply (standard 2x5 pin Eurorack power connector), and draws ~100mA on the +12V rail under normal operation.
 
-The module has reverse polarity protection on the power socket, but please don't rely on it. Your module should have a notched box socket to prevent connecting the power cable in the wrong orientation. If your module is a hardware variation that does not have a notched box socket, ensure the red stripe on the power cable matches the 'RED' annotation on the PCB (when looking at the back of the module, with the power connector to the top, the red stripe on the ribbon cable (-12V) should be on the right).
+The module has reverse polarity protection on the power socket, but please don't rely on it. Your module should have a notched box socket to prevent connecting the power cable in the wrong orientation. If your module is a hardware variation that does not have a notched box socket, ensure the red stripe on the power cable matches the 'RED' annotation on the PCB (when looking at the back of the module, with the power connector to the top, the red stripe on the ribbon cable [-12V] should be on the right).
 
 ## Getting started
 

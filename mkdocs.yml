@@ -6,6 +6,8 @@ plugins:
   - search
 extra_css:
   - css/extra.css
+extra_javascript:
+  - js/extra.js
 nav:
   - 'Manuals and user guides':
     - 'hexaloffle-manual.md'
