@@ -1,0 +1,145 @@
+[
+  {
+    "objectID": "docs/build.html",
+    "href": "docs/build.html",
+    "title": "Build and development documentation",
+    "section": "",
+    "text": "Build and development documentation\nThis is documentation for DIY module builders, firmware developers and the curious.\nIf you have a pre-built module made for you and just want to use it to make music or fart noises, you can safely ignore this section.",
+    "crumbs": [
+      "DIY Build Guides",
+      "Build and development documentation"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html",
+    "href": "docs/hexaloffle/manual.html",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "Hexaloffle: 6x tap tempo LFOs in 5HP\n\n\nHexaloffle provides six tap tempo LFOs, with configurable multipliers/dividers per channel and multiplier randomization via CV control.\n\n\n\nHexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs\n\n\n\n\n\n \n \n\n\n\n\nWidth\n5HP (25 mm)\n\n\nDepth\n43 mm\n\n\nPeak current draw\n150mA (+12V), 10mA (-12V), 0mA (+5V)\n\n\nTypical current draw\n100mA (+12V), 5mA (-12V), 0mA (+5V)\n\n\nAlignment\nChaotic neutral\n\n\n\n\n\n\nHexaloffle requires a -12V/+12V power supply (standard 2x5 pin Eurorack power connector), and draws ~100mA on the +12V rail under normal operation.\nThe module has reverse polarity protection on the power socket, but please don’t rely on it. Your module should have a notched box socket to prevent connecting the power cable in the wrong orientation. If your module is a hardware variation that does not have a notched box socket, ensure the red stripe on the power cable matches the ‘RED’ annotation on the PCB (when looking at the back of the module, with the power connector to the top, the red stripe on the ribbon cable [-12V] should be on the right).\n\n\n\nTap Button A at a steady tempo, or patch a constant clock or trigger signal into TRIG. Observe that the LEDs are pulsing between red and yellow.\nPatch one of the outputs 1-6 into another module in your system - try a filter cutoff input, VCO frequency input or other module where you can easily hear the result of a control voltage change. Enjoy having six synchronized LFOs !\n\n\n\nThe LFO rate follows the tempo of a clock at TRIG, or the tempo of Button A when tapped. The LFO is always a sine (or best digital effort).\n\nButton A (short taps): set tempo, LFO rate\nButton B (short press): select output to edit\n\nOutput selection cycles through outputs 1 - 6, then ‘all outputs’\nThe selected output flashes green\n\nButton B (hold): edits the clock multiplier/divider for the currently select output(s)\n\nHold Button B, then turn the CTRL potentiometer to modify the multiplier/divider\nSelected outputs will briefly flash cyan when Button B is held.\nEach output has it’s own multiplier. There is also a ‘global multiplier’. When ‘all outputs’ are selected, the global multiplier is modified (final output multiplier = channel multiplier * global multiplier)\n\nCTRL - the potentiometer is only used when Button B is held.\nCV input (0.0 ~ 5.8V): random multiplier\n\nAt each tap/clock the CV input is read.\nThe CV value determines the maximum value for a randomly chosen multiplier applies individually to each output.\nAt input voltages below ~1.0V, some outputs will randomly receive a 2x multiplier, others won’t.\nThe maximum random multiplier varies from a sensible 2x - 5x at voltages below 2.5V, to crazy fast multipliers as we get above 2.5V.\nApproximate multipliers at CV voltages:\n\n1.0V -&gt; x2\n1.7V -&gt; x3\n2.0V -&gt; x4\n2.5V -&gt; x5\n3.5V -&gt; x16\n4.5V -&gt; x50\n5.5V -&gt; x128\n5.8V -&gt; x200\n\n\n\nThe LFO rate of each channel is determined by the clock/tap rate and several multipliers/dividers. The final rate of an output is:\nclock rate * global * channel * random(channel)\nUpon power-on, the initial channel multiplier’s give slow LFOs for the top outputs, and increasingly faster LFOs for the lower outputs.\n\n\n\n\nTRIG: A trigger or clock input to set the speed of the LFOs.\nCV: A 0 to 5.8V control voltage input that determines the maximum random multiplier (see above)\nOutputs 1 - 6 (numbered sockets, from top to bottom): Bipolor control voltage outputs, approximately -5 to +5V.\n\nEach output is associated with an RGB LED that displays the amplitude of the output signal. Red is positive, yellow is negative and blue is close to zero. The LEDs flash other colours (green, cyan) to indicate output selection.\n\n\n\n\n\nConnect a micro USB cable between your computer and the micro USB port on the Raspberry Pi Pico on the back of the Hexaloffle. It should be safe to do this while the Eurorack power is also connected and on (this is how I’ve always done firmware updates, via a USB hub), however I make no guarantees this won’t somehow damage your equipment. If you want to reduce the risk of damaging your computer / USB port / hub, please disconnect the Eurorack power first - the front panel lights won’t function under USB-only power, but the firmware updates work just the same.\nBriefly:\n\nInstall MicroPython on the Raspberry Pi Pico. If MicroPython is already installed, you can probably skip this step.\nCopy the Hexaloffle source code files to the Pico (eg using Thonny, rshell or similar).",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html#overview",
+    "href": "docs/hexaloffle/manual.html#overview",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "Hexaloffle provides six tap tempo LFOs, with configurable multipliers/dividers per channel and multiplier randomization via CV control.\n\n\n\nHexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs\n\n\n\n\n\n \n \n\n\n\n\nWidth\n5HP (25 mm)\n\n\nDepth\n43 mm\n\n\nPeak current draw\n150mA (+12V), 10mA (-12V), 0mA (+5V)\n\n\nTypical current draw\n100mA (+12V), 5mA (-12V), 0mA (+5V)\n\n\nAlignment\nChaotic neutral",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html#installation",
+    "href": "docs/hexaloffle/manual.html#installation",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "Hexaloffle requires a -12V/+12V power supply (standard 2x5 pin Eurorack power connector), and draws ~100mA on the +12V rail under normal operation.\nThe module has reverse polarity protection on the power socket, but please don’t rely on it. Your module should have a notched box socket to prevent connecting the power cable in the wrong orientation. If your module is a hardware variation that does not have a notched box socket, ensure the red stripe on the power cable matches the ‘RED’ annotation on the PCB (when looking at the back of the module, with the power connector to the top, the red stripe on the ribbon cable [-12V] should be on the right).",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html#getting-started",
+    "href": "docs/hexaloffle/manual.html#getting-started",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "Tap Button A at a steady tempo, or patch a constant clock or trigger signal into TRIG. Observe that the LEDs are pulsing between red and yellow.\nPatch one of the outputs 1-6 into another module in your system - try a filter cutoff input, VCO frequency input or other module where you can easily hear the result of a control voltage change. Enjoy having six synchronized LFOs !",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html#controls",
+    "href": "docs/hexaloffle/manual.html#controls",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "The LFO rate follows the tempo of a clock at TRIG, or the tempo of Button A when tapped. The LFO is always a sine (or best digital effort).\n\nButton A (short taps): set tempo, LFO rate\nButton B (short press): select output to edit\n\nOutput selection cycles through outputs 1 - 6, then ‘all outputs’\nThe selected output flashes green\n\nButton B (hold): edits the clock multiplier/divider for the currently select output(s)\n\nHold Button B, then turn the CTRL potentiometer to modify the multiplier/divider\nSelected outputs will briefly flash cyan when Button B is held.\nEach output has it’s own multiplier. There is also a ‘global multiplier’. When ‘all outputs’ are selected, the global multiplier is modified (final output multiplier = channel multiplier * global multiplier)\n\nCTRL - the potentiometer is only used when Button B is held.\nCV input (0.0 ~ 5.8V): random multiplier\n\nAt each tap/clock the CV input is read.\nThe CV value determines the maximum value for a randomly chosen multiplier applies individually to each output.\nAt input voltages below ~1.0V, some outputs will randomly receive a 2x multiplier, others won’t.\nThe maximum random multiplier varies from a sensible 2x - 5x at voltages below 2.5V, to crazy fast multipliers as we get above 2.5V.\nApproximate multipliers at CV voltages:\n\n1.0V -&gt; x2\n1.7V -&gt; x3\n2.0V -&gt; x4\n2.5V -&gt; x5\n3.5V -&gt; x16\n4.5V -&gt; x50\n5.5V -&gt; x128\n5.8V -&gt; x200\n\n\n\nThe LFO rate of each channel is determined by the clock/tap rate and several multipliers/dividers. The final rate of an output is:\nclock rate * global * channel * random(channel)\nUpon power-on, the initial channel multiplier’s give slow LFOs for the top outputs, and increasingly faster LFOs for the lower outputs.",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html#inputs-and-outputs",
+    "href": "docs/hexaloffle/manual.html#inputs-and-outputs",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "TRIG: A trigger or clock input to set the speed of the LFOs.\nCV: A 0 to 5.8V control voltage input that determines the maximum random multiplier (see above)\nOutputs 1 - 6 (numbered sockets, from top to bottom): Bipolor control voltage outputs, approximately -5 to +5V.\n\nEach output is associated with an RGB LED that displays the amplitude of the output signal. Red is positive, yellow is negative and blue is close to zero. The LEDs flash other colours (green, cyan) to indicate output selection.",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/manual.html#firmware-updates",
+    "href": "docs/hexaloffle/manual.html#firmware-updates",
+    "title": "Hexaloffle",
+    "section": "",
+    "text": "Connect a micro USB cable between your computer and the micro USB port on the Raspberry Pi Pico on the back of the Hexaloffle. It should be safe to do this while the Eurorack power is also connected and on (this is how I’ve always done firmware updates, via a USB hub), however I make no guarantees this won’t somehow damage your equipment. If you want to reduce the risk of damaging your computer / USB port / hub, please disconnect the Eurorack power first - the front panel lights won’t function under USB-only power, but the firmware updates work just the same.\nBriefly:\n\nInstall MicroPython on the Raspberry Pi Pico. If MicroPython is already installed, you can probably skip this step.\nCopy the Hexaloffle source code files to the Pico (eg using Thonny, rshell or similar).",
+    "crumbs": [
+      "Manuals",
+      "Hexaloffle"
+    ]
+  },
+  {
+    "objectID": "docs/index.html",
+    "href": "docs/index.html",
+    "title": "Semi-Sensible Synth Docs",
+    "section": "",
+    "text": "This is the documentation for Semi-sensible Synth Eurorack modules.\n\n\nThis is the documentation on how to use a built module.\n\n\n\nHexaloffle",
+    "crumbs": [
+      "Home",
+      "Semi-Sensible Synth Docs"
+    ]
+  },
+  {
+    "objectID": "docs/index.html#user-documentation",
+    "href": "docs/index.html#user-documentation",
+    "title": "Semi-Sensible Synth Docs",
+    "section": "",
+    "text": "This is the documentation on how to use a built module.\n\n\n\nHexaloffle",
+    "crumbs": [
+      "Home",
+      "Semi-Sensible Synth Docs"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/build-guide.html",
+    "href": "docs/hexaloffle/build-guide.html",
+    "title": "Hexaloffle DIY build guide",
+    "section": "",
+    "text": "TODO: This section will contain DIY build instructions and a link to the iBOM\n\n\n\n\n\n\nRun DRC - correct any issues. Some silkscreens are expected to overlap (jacks) and there will be unconnected nets between boards (eg OUTJACK_1 etc) - but be careful ignoring anything.\n\nTODO: Edit jack silkscreens to remove overlapping parts when sharing GND, avoid that warning.\n\nBoards are all in a single PCBnew file since this has advantages at design time. To export a single board, simply delete the others (but don’t save !) then export gerbers etc.\nGerbers, BOMs and position files for production were exported using kicad-jlcpcb-tools\n\nAlternative to consider for the future: JLC-Plugin-for-KiCad (Fabrication Toolkit) - since part offsets and rotations can defined in the symbol fields and footprint properties for better reproducibility of exports.\n\n\n\n\n\nNOTE: Early prototypes of the Hexaloffle were internally named ‘Picorack Modulator’ - you may see reference to this in some of the design and source files.",
+    "crumbs": [
+      "DIY Build Guides",
+      "Hexaloffle DIY build guide"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/build-guide.html#exporting-from-kicad-for-production",
+    "href": "docs/hexaloffle/build-guide.html#exporting-from-kicad-for-production",
+    "title": "Hexaloffle DIY build guide",
+    "section": "",
+    "text": "Run DRC - correct any issues. Some silkscreens are expected to overlap (jacks) and there will be unconnected nets between boards (eg OUTJACK_1 etc) - but be careful ignoring anything.\n\nTODO: Edit jack silkscreens to remove overlapping parts when sharing GND, avoid that warning.\n\nBoards are all in a single PCBnew file since this has advantages at design time. To export a single board, simply delete the others (but don’t save !) then export gerbers etc.\nGerbers, BOMs and position files for production were exported using kicad-jlcpcb-tools\n\nAlternative to consider for the future: JLC-Plugin-for-KiCad (Fabrication Toolkit) - since part offsets and rotations can defined in the symbol fields and footprint properties for better reproducibility of exports.",
+    "crumbs": [
+      "DIY Build Guides",
+      "Hexaloffle DIY build guide"
+    ]
+  },
+  {
+    "objectID": "docs/hexaloffle/build-guide.html#trivia",
+    "href": "docs/hexaloffle/build-guide.html#trivia",
+    "title": "Hexaloffle DIY build guide",
+    "section": "",
+    "text": "NOTE: Early prototypes of the Hexaloffle were internally named ‘Picorack Modulator’ - you may see reference to this in some of the design and source files.",
+    "crumbs": [
+      "DIY Build Guides",
+      "Hexaloffle DIY build guide"
+    ]
+  }
+]
