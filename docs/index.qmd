@@ -8,5 +8,5 @@ This is the documentation on how to use a built module.
 
 ### Hexaloffle
 
-- [Hexaloffle](hexaloffle-manual)
+- [Hexaloffle](hexaloffle/manual.qmd)
 

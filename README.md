@@ -6,14 +6,10 @@ See: https://semi-sensible-synth.github.io/
 
 Commits are automatically built and deployed by Github Actions.
 
-For developing and previewing locally, do:
+For developing and previewing locally, first install [Quarto](https://quarto.org/), then do:
 
 ```bash
-conda create -n sss-docs python=3.11
-conda activate sss-docs
-pip install -r docs/requirements.txt
+quarto preview
 
-mkdocs serve
-
-mkdocs build
+quarto render
 ```

@@ -1,0 +1,50 @@
+project: 
+  type: website
+  
+website: 
+  page-navigation: true
+  title: "Semi-sensible Synth Documentation" 
+  site-url: "https://semi-sensible-synth.github.io/"
+  repo-url: https://github.com/semi-sensible-synth/docs 
+  repo-actions: [edit, issue]
+  
+  page-footer:
+    right: "❤️ ❤️ ❤️"
+    left: "&copy; CC0 1.0 Universal, Andrew Perry, 2024"
+    
+  sidebar:
+    logo: "docs/images/sss-bad-logo.png"
+    pinned: true
+    align: center
+    tools: 
+      - icon: globe
+        href: https://semi-sensible-synth.github.io/
+        text: "Semi-sensible Synth"
+      - icon: github
+        href: https://github.com/semi-sensible-synth
+        text: "Github"
+
+    style: "docked"
+    search: true
+    collapse-level: 2
+    contents:
+      - section: "Home"
+        contents: 
+            - docs/index.qmd
+      - section: "Manuals"
+        contents: 
+          - docs/hexaloffle/manual.qmd
+      - section: "DIY Build Guides"
+        contents:
+          - docs/build.qmd
+          - docs/hexaloffle/build-guide.qmd
+
+
+format:
+  html:
+    theme:
+      light: [cosmo, docs/css/theme.scss] # from https://github.com/sta210-s22/website/blob/main/_quarto.yml
+      dark: [cosmo, docs/css/theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
+    toc: true
