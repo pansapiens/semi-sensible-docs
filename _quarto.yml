@@ -4,7 +4,7 @@ project:
 website: 
   page-navigation: true
   title: "Semi-sensible Synth Documentation" 
-  site-url: "https://semi-sensible-synth.github.io/"
+  site-url: "https://semi-sensible-synth.github.io/docs/"
   repo-url: https://github.com/semi-sensible-synth/docs 
   repo-actions: [edit, issue]
   
