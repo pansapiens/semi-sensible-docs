@@ -1,1 +1,1 @@
-Sitemap: https://semi-sensible-synth.github.io/sitemap.xml
+Sitemap: https://semi-sensible-synth.github.io/docs/sitemap.xml
