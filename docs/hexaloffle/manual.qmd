@@ -14,7 +14,7 @@ _Hexaloffle: 6x tap tempo LFOs in 5HP_
 _Hexaloffle_ provides six tap tempo LFOs, with configurable multipliers/dividers per channel and
 multiplier randomization via CV control.
 
-![Hexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs](../images/hexaloffle/hexaloffle_panel_annotated.png  "Hexaloffle Front panel overview")
+![](../images/hexaloffle/hexaloffle_panel_annotated.png  "Hexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, the TAP and MOD buttons, and six 3.5mm output sockets with associated RGB LEDs")
 
 &nbsp;                   |&nbsp;                                    
 -------------------------|-------------------------------------
