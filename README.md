@@ -9,7 +9,7 @@ Commits are automatically built and deployed by Github Actions.
 For developing and previewing locally, first install [Quarto](https://quarto.org/), then do:
 
 ```bash
-quarto preview
+quarto preview docs/
 
-quarto render
+quarto render docs/
 ```
