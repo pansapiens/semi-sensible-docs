@@ -1,13 +1,24 @@
 [
   {
-    "objectID": "build.html",
-    "href": "build.html",
-    "title": "Build and development documentation",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Semi-Sensible Synth Docs",
     "section": "",
-    "text": "Build and development documentation\nThis is documentation for DIY module builders, firmware developers and the curious.\nIf you have a pre-built module made for you and just want to use it to make music or fart noises, you can safely ignore this section.",
+    "text": "This is the documentation for Semi-sensible Synth Eurorack modules.\n\n\nThis is the documentation on how to use a built module.\n\n\n\nHexaloffle",
     "crumbs": [
-      "DIY Build Guides",
-      "Build and development documentation"
+      "Home",
+      "Semi-Sensible Synth Docs"
+    ]
+  },
+  {
+    "objectID": "index.html#user-documentation",
+    "href": "index.html#user-documentation",
+    "title": "Semi-Sensible Synth Docs",
+    "section": "",
+    "text": "This is the documentation on how to use a built module.\n\n\n\nHexaloffle",
+    "crumbs": [
+      "Home",
+      "Semi-Sensible Synth Docs"
     ]
   },
   {
@@ -15,7 +26,7 @@
     "href": "hexaloffle/manual.html",
     "title": "Hexaloffle",
     "section": "",
-    "text": "Hexaloffle: 6x tap tempo LFOs in 5HP\n\n\nHexaloffle provides six tap tempo LFOs, with configurable multipliers/dividers per channel and multiplier randomization via CV control.\n\n\n\nHexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs\n\n\n\n\n\n \n \n\n\n\n\nWidth\n5HP (25 mm)\n\n\nDepth\n43 mm\n\n\nPeak current draw\n150mA (+12V), 10mA (-12V), 0mA (+5V)\n\n\nTypical current draw\n100mA (+12V), 5mA (-12V), 0mA (+5V)\n\n\nAlignment\nChaotic neutral\n\n\n\n\n\n\nHexaloffle requires a -12V/+12V power supply (standard 2x5 pin Eurorack power connector), and draws ~100mA on the +12V rail under normal operation.\nThe module has reverse polarity protection on the power socket, but please don’t rely on it. Your module should have a notched box socket to prevent connecting the power cable in the wrong orientation. If your module is a hardware variation that does not have a notched box socket, ensure the red stripe on the power cable matches the ‘RED’ annotation on the PCB (when looking at the back of the module, with the power connector to the top, the red stripe on the ribbon cable [-12V] should be on the right).\n\n\n\nTap Button A at a steady tempo, or patch a constant clock or trigger signal into TRIG. Observe that the LEDs are pulsing between red and yellow.\nPatch one of the outputs 1-6 into another module in your system - try a filter cutoff input, VCO frequency input or other module where you can easily hear the result of a control voltage change. Enjoy having six synchronized LFOs !\n\n\n\nThe LFO rate follows the tempo of a clock at TRIG, or the tempo of Button A when tapped. The LFO is always a sine (or best digital effort).\n\nButton A (short taps): set tempo, LFO rate\nButton B (short press): select output to edit\n\nOutput selection cycles through outputs 1 - 6, then ‘all outputs’\nThe selected output flashes green\n\nButton B (hold): edits the clock multiplier/divider for the currently select output(s)\n\nHold Button B, then turn the CTRL potentiometer to modify the multiplier/divider\nSelected outputs will briefly flash cyan when Button B is held.\nEach output has it’s own multiplier. There is also a ‘global multiplier’. When ‘all outputs’ are selected, the global multiplier is modified (final output multiplier = channel multiplier * global multiplier)\n\nCTRL - the potentiometer is only used when Button B is held.\nCV input (0.0 ~ 5.8V): random multiplier\n\nAt each tap/clock the CV input is read.\nThe CV value determines the maximum value for a randomly chosen multiplier applies individually to each output.\nAt input voltages below ~1.0V, some outputs will randomly receive a 2x multiplier, others won’t.\nThe maximum random multiplier varies from a sensible 2x - 5x at voltages below 2.5V, to crazy fast multipliers as we get above 2.5V.\nApproximate multipliers at CV voltages:\n\n1.0V -&gt; x2\n1.7V -&gt; x3\n2.0V -&gt; x4\n2.5V -&gt; x5\n3.5V -&gt; x16\n4.5V -&gt; x50\n5.5V -&gt; x128\n5.8V -&gt; x200\n\n\n\nThe LFO rate of each channel is determined by the clock/tap rate and several multipliers/dividers. The final rate of an output is:\nclock rate * global * channel * random(channel)\nUpon power-on, the initial channel multiplier’s give slow LFOs for the top outputs, and increasingly faster LFOs for the lower outputs.\n\n\n\n\nTRIG: A trigger or clock input to set the speed of the LFOs.\nCV: A 0 to 5.8V control voltage input that determines the maximum random multiplier (see above)\nOutputs 1 - 6 (numbered sockets, from top to bottom): Bipolor control voltage outputs, approximately -5 to +5V.\n\nEach output is associated with an RGB LED that displays the amplitude of the output signal. Red is positive, yellow is negative and blue is close to zero. The LEDs flash other colours (green, cyan) to indicate output selection.\n\n\n\n\n\nConnect a micro USB cable between your computer and the micro USB port on the Raspberry Pi Pico on the back of the Hexaloffle. It should be safe to do this while the Eurorack power is also connected and on (this is how I’ve always done firmware updates, via a USB hub), however I make no guarantees this won’t somehow damage your equipment. If you want to reduce the risk of damaging your computer / USB port / hub, please disconnect the Eurorack power first - the front panel lights won’t function under USB-only power, but the firmware updates work just the same.\nBriefly:\n\nInstall MicroPython on the Raspberry Pi Pico. If MicroPython is already installed, you can probably skip this step.\nCopy the Hexaloffle source code files to the Pico (eg using Thonny, rshell or similar).",
+    "text": "Hexaloffle: 6x tap tempo LFOs in 5HP\n\n\nHexaloffle provides six tap tempo LFOs, with configurable multipliers/dividers per channel and multiplier randomization via CV control.\n\n\n\nHexaloffle Front panel overview showing the location of the TRIG and CV 3.5mm inputs, the CTRL potentiometer knob, buttons A and B, and six 3.5mm output sockets with associated RGB LEDs\n\n\n\n\n\n \n \n\n\n\n\nWidth\n5HP (25 mm)\n\n\nDepth\n43 mm\n\n\nPeak current draw\n150mA (+12V), 10mA (-12V), 0mA (+5V)\n\n\nTypical current draw\n100mA (+12V), 5mA (-12V), 0mA (+5V)\n\n\nAlignment\nChaotic neutral\n\n\n\n\n\n\nHexaloffle requires a -12V/+12V power supply (standard 2x5 pin Eurorack power connector), and draws ~100mA on the +12V rail under normal operation.\nThe module has reverse polarity protection on the power socket, but please don’t rely on it. Your module should have a notched box socket to prevent connecting the power cable in the wrong orientation. If your module is a hardware variation that does not have a notched box socket, ensure the red stripe on the power cable matches the ‘RED’ annotation on the PCB (when looking at the back of the module, with the power connector to the top, the red stripe on the ribbon cable [-12V] should be on the right).\n\n\n\nIn the default mode, Hexaloffle acts as a clock synched modulation source. Press the TAP button at a steady tempo, or patch a constant clock or trigger signal into TRIG. Observe that the LEDs are cycling between red and yellow.\nPatch one of the outputs 1-6 into another module in your system - try a filter cutoff input, VCO frequency input or other module where you can easily hear the result of a control voltage change. Enjoy having six synchronized LFOs !\n\n\n\nThe LFO rate follows the tempo of a clock at TRIG, or the tempo of TAP when tapped. The LFO is always a sine (or best digital effort).\n\nTAP button (short taps): set tempo, LFO rate\nMOD button (short press): select the output to edit\n\nOutput selection cycles through ‘all outputs’, then outputs 1 - 6 individually, then no outputs.\nThe selected output flashes cyan\n\nMOD button (hold): edits the clock multiplier/divider for the currently select output(s)\n\nHold the MOD button, then turn the CTRL potentiometer to modify the multiplier/divider for the selected output(s)\nSelected outputs will briefly flash cyan when MOD is held.\nEach output has its own multiplier. There is also a ‘global multiplier’. When ‘all outputs’ are selected, the global multiplier is modified (final output multiplier = channel multiplier * global multiplier)\n\nCTRL - the potentiometer only makes changes when MOD is held.\nCV input (0.0 ~ 5.8V): LFO frequency multiplier\n\nAs the input voltage to CV increases, so does the LFO frequency on all outputs\n(Currently, the phase also changes as the CV or CTRL value is changed. For the moment, let’s treat this as an interesting feature to be used creatively rather than a bug)\n\n\nUpon power-on, the initial channel multipliers give slow LFOs for the top outputs, and increasingly faster LFOs for the lower outputs.\n\n\n\n\nTRIG: A trigger or clock input to set the speed of the LFOs.\nCV: A 0 to 5.8V control voltage input that determines the maximum random multiplier (see above)\nOutputs 1 - 6 (numbered sockets, from top to bottom):\n\nBipolor control voltage outputs, approximately -5 to +5V (or ~0 ~ 5V when the unipolar jumper is set).\nEach output is associated with an RGB LED that displays the amplitude of the output signal. Red is positive, yellow is negative and blue is close to zero. The LEDs flash other colours (green, cyan) to indicate output selection.\n\n\nOn the back of the module, setting the “UNIPOLAR” jumper changes the output range to 0 ~ 5 V.\n\n\n\nWhile holding the little white button on the Raspberry Pi Pico module, connect it via micro USB cable to your computer. The Raspberry Pi Pico should appear as a mounted drive, like a USB thumb drive. Drag / copy the hexaloffle-vXX.uf2 file onto the Raspberry Pi Pico - it should reboot automatically, and be running the new firmware.\n\nIt should be safe to do this while the Eurorack power is also connected and on (this is how I’ve always done firmware updates, via a USB hub), however I make no guarantees this won’t somehow damage your equipment. If you want to reduce the risk of damaging your computer / USB port / hub, please disconnect the Eurorack power first - the front panel lights won’t function under USB-only power, but the firmware updates work just the same.",
     "crumbs": [
       "Manuals",
       "Hexaloffle"
@@ -48,7 +59,7 @@
     "href": "hexaloffle/manual.html#getting-started",
     "title": "Hexaloffle",
     "section": "",
-    "text": "Tap Button A at a steady tempo, or patch a constant clock or trigger signal into TRIG. Observe that the LEDs are pulsing between red and yellow.\nPatch one of the outputs 1-6 into another module in your system - try a filter cutoff input, VCO frequency input or other module where you can easily hear the result of a control voltage change. Enjoy having six synchronized LFOs !",
+    "text": "In the default mode, Hexaloffle acts as a clock synched modulation source. Press the TAP button at a steady tempo, or patch a constant clock or trigger signal into TRIG. Observe that the LEDs are cycling between red and yellow.\nPatch one of the outputs 1-6 into another module in your system - try a filter cutoff input, VCO frequency input or other module where you can easily hear the result of a control voltage change. Enjoy having six synchronized LFOs !",
     "crumbs": [
       "Manuals",
       "Hexaloffle"
@@ -59,7 +70,7 @@
     "href": "hexaloffle/manual.html#controls",
     "title": "Hexaloffle",
     "section": "",
-    "text": "The LFO rate follows the tempo of a clock at TRIG, or the tempo of Button A when tapped. The LFO is always a sine (or best digital effort).\n\nButton A (short taps): set tempo, LFO rate\nButton B (short press): select output to edit\n\nOutput selection cycles through outputs 1 - 6, then ‘all outputs’\nThe selected output flashes green\n\nButton B (hold): edits the clock multiplier/divider for the currently select output(s)\n\nHold Button B, then turn the CTRL potentiometer to modify the multiplier/divider\nSelected outputs will briefly flash cyan when Button B is held.\nEach output has it’s own multiplier. There is also a ‘global multiplier’. When ‘all outputs’ are selected, the global multiplier is modified (final output multiplier = channel multiplier * global multiplier)\n\nCTRL - the potentiometer is only used when Button B is held.\nCV input (0.0 ~ 5.8V): random multiplier\n\nAt each tap/clock the CV input is read.\nThe CV value determines the maximum value for a randomly chosen multiplier applies individually to each output.\nAt input voltages below ~1.0V, some outputs will randomly receive a 2x multiplier, others won’t.\nThe maximum random multiplier varies from a sensible 2x - 5x at voltages below 2.5V, to crazy fast multipliers as we get above 2.5V.\nApproximate multipliers at CV voltages:\n\n1.0V -&gt; x2\n1.7V -&gt; x3\n2.0V -&gt; x4\n2.5V -&gt; x5\n3.5V -&gt; x16\n4.5V -&gt; x50\n5.5V -&gt; x128\n5.8V -&gt; x200\n\n\n\nThe LFO rate of each channel is determined by the clock/tap rate and several multipliers/dividers. The final rate of an output is:\nclock rate * global * channel * random(channel)\nUpon power-on, the initial channel multiplier’s give slow LFOs for the top outputs, and increasingly faster LFOs for the lower outputs.",
+    "text": "The LFO rate follows the tempo of a clock at TRIG, or the tempo of TAP when tapped. The LFO is always a sine (or best digital effort).\n\nTAP button (short taps): set tempo, LFO rate\nMOD button (short press): select the output to edit\n\nOutput selection cycles through ‘all outputs’, then outputs 1 - 6 individually, then no outputs.\nThe selected output flashes cyan\n\nMOD button (hold): edits the clock multiplier/divider for the currently select output(s)\n\nHold the MOD button, then turn the CTRL potentiometer to modify the multiplier/divider for the selected output(s)\nSelected outputs will briefly flash cyan when MOD is held.\nEach output has its own multiplier. There is also a ‘global multiplier’. When ‘all outputs’ are selected, the global multiplier is modified (final output multiplier = channel multiplier * global multiplier)\n\nCTRL - the potentiometer only makes changes when MOD is held.\nCV input (0.0 ~ 5.8V): LFO frequency multiplier\n\nAs the input voltage to CV increases, so does the LFO frequency on all outputs\n(Currently, the phase also changes as the CV or CTRL value is changed. For the moment, let’s treat this as an interesting feature to be used creatively rather than a bug)\n\n\nUpon power-on, the initial channel multipliers give slow LFOs for the top outputs, and increasingly faster LFOs for the lower outputs.",
     "crumbs": [
       "Manuals",
       "Hexaloffle"
@@ -70,7 +81,7 @@
     "href": "hexaloffle/manual.html#inputs-and-outputs",
     "title": "Hexaloffle",
     "section": "",
-    "text": "TRIG: A trigger or clock input to set the speed of the LFOs.\nCV: A 0 to 5.8V control voltage input that determines the maximum random multiplier (see above)\nOutputs 1 - 6 (numbered sockets, from top to bottom): Bipolor control voltage outputs, approximately -5 to +5V.\n\nEach output is associated with an RGB LED that displays the amplitude of the output signal. Red is positive, yellow is negative and blue is close to zero. The LEDs flash other colours (green, cyan) to indicate output selection.",
+    "text": "TRIG: A trigger or clock input to set the speed of the LFOs.\nCV: A 0 to 5.8V control voltage input that determines the maximum random multiplier (see above)\nOutputs 1 - 6 (numbered sockets, from top to bottom):\n\nBipolor control voltage outputs, approximately -5 to +5V (or ~0 ~ 5V when the unipolar jumper is set).\nEach output is associated with an RGB LED that displays the amplitude of the output signal. Red is positive, yellow is negative and blue is close to zero. The LEDs flash other colours (green, cyan) to indicate output selection.\n\n\nOn the back of the module, setting the “UNIPOLAR” jumper changes the output range to 0 ~ 5 V.",
     "crumbs": [
       "Manuals",
       "Hexaloffle"
@@ -81,32 +92,21 @@
     "href": "hexaloffle/manual.html#firmware-updates",
     "title": "Hexaloffle",
     "section": "",
-    "text": "Connect a micro USB cable between your computer and the micro USB port on the Raspberry Pi Pico on the back of the Hexaloffle. It should be safe to do this while the Eurorack power is also connected and on (this is how I’ve always done firmware updates, via a USB hub), however I make no guarantees this won’t somehow damage your equipment. If you want to reduce the risk of damaging your computer / USB port / hub, please disconnect the Eurorack power first - the front panel lights won’t function under USB-only power, but the firmware updates work just the same.\nBriefly:\n\nInstall MicroPython on the Raspberry Pi Pico. If MicroPython is already installed, you can probably skip this step.\nCopy the Hexaloffle source code files to the Pico (eg using Thonny, rshell or similar).",
+    "text": "While holding the little white button on the Raspberry Pi Pico module, connect it via micro USB cable to your computer. The Raspberry Pi Pico should appear as a mounted drive, like a USB thumb drive. Drag / copy the hexaloffle-vXX.uf2 file onto the Raspberry Pi Pico - it should reboot automatically, and be running the new firmware.\n\nIt should be safe to do this while the Eurorack power is also connected and on (this is how I’ve always done firmware updates, via a USB hub), however I make no guarantees this won’t somehow damage your equipment. If you want to reduce the risk of damaging your computer / USB port / hub, please disconnect the Eurorack power first - the front panel lights won’t function under USB-only power, but the firmware updates work just the same.",
     "crumbs": [
       "Manuals",
       "Hexaloffle"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Semi-Sensible Synth Docs",
+    "objectID": "build.html",
+    "href": "build.html",
+    "title": "Build and development documentation",
     "section": "",
-    "text": "This is the documentation for Semi-sensible Synth Eurorack modules.\n\n\nThis is the documentation on how to use a built module.\n\n\n\nHexaloffle",
+    "text": "Build and development documentation\nThis is documentation for DIY module builders, firmware developers and the curious.\nIf you have a pre-built module made for you and just want to use it to make music or fart noises, you can safely ignore this section.",
     "crumbs": [
-      "Home",
-      "Semi-Sensible Synth Docs"
-    ]
-  },
-  {
-    "objectID": "index.html#user-documentation",
-    "href": "index.html#user-documentation",
-    "title": "Semi-Sensible Synth Docs",
-    "section": "",
-    "text": "This is the documentation on how to use a built module.\n\n\n\nHexaloffle",
-    "crumbs": [
-      "Home",
-      "Semi-Sensible Synth Docs"
+      "DIY Build Guides",
+      "Build and development documentation"
     ]
   },
   {
