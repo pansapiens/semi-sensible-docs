@@ -1,6 +1,6 @@
 # Semi-sensible Synth Docs
 
-See: https://semi-sensible-synth.github.io/
+See: https://semi-sensible-synth.github.io/docs
 
 ----
 
